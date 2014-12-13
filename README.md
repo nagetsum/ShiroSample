@@ -13,7 +13,7 @@ setup
 --------
 1. setting your datasource
 
-Default datasource jndiname is java:comp/DefaultDataSource (glassfish default. connect for derby)
+    Default datasource jndiname is java:comp/DefaultDataSource (glassfish default. connect for derby)
 
 * src/main/resources/META-INF/persistence.xml
 
@@ -41,4 +41,4 @@ cd glassfish4/bin
 ```
 
 4. access
-http://localhost:8080/ShiroSample
+    http://localhost:8080/ShiroSample
