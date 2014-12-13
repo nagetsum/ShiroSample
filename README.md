@@ -3,6 +3,8 @@ ShiroSample
 
 Apache Shiro 1.2 JDBC Realm sample.
 
+![site/screen.png]
+
 environment
 -------------
 * GlassFish 4.1 (Java EE7)
