@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -29,7 +28,7 @@ public class UserAccount implements Serializable {
     public static String REFER_ALL = "UserAccount.referAll";
     public static String FIND_BY_EMAIL = "UserAccount.findByEmail";
     
-    @Id @GeneratedValue(strategy=SEQUENCE)
+    @Id @GeneratedValue
     private long id;   
     private String email;
     private String password;
