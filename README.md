@@ -3,7 +3,7 @@ ShiroSample
 
 Apache Shiro 1.2 JDBC Realm sample.
 
-![site/screen.png]
+![screenshot](site/screen.png)
 
 environment
 -------------
