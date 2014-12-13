@@ -30,7 +30,9 @@ setup
     ```
 
 2. build
-    `mvn package`
+    ```
+    mvn package
+    ```
 
 3. deploy
     ```
