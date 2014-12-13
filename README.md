@@ -15,21 +15,29 @@ setup
 Default datasource jndiname is java:comp/DefaultDataSource (glassfish default. connect for derby)
 
 * src/main/resources/META-INF/persistence.xml
-  <persistence-unit name="DerbyPU" transaction-type="JTA">
+
+```
+<persistence-unit name="DerbyPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>java:comp/DefaultDataSource</jta-data-source> <= Change your DataSource jndi name
+```
 
 * src/main/resources/shiro.ini
-  ds.resourceName = java:comp/DefaultDataSource <= Change your DataSource jndi name
+
+```
+ds.resourceName = java:comp/DefaultDataSource <= Change your DataSource jndi name
+```
 
 2. build
-  mvn package
+`mvn package`
 
 3. deploy
-  cd glassfish4/bin
-  ./asadmin start-database (if user default datasource)
-  ./asadmin start-domain
-  ./asadmin deploy ShoroSample.war
+```
+cd glassfish4/bin
+./asadmin start-database (if user default datasource)
+./asadmin start-domain
+./asadmin deploy ShoroSample.war
+```
 
 4. access
 http://localhost:8080/ShiroSample
