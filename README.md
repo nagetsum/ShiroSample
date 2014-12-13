@@ -12,6 +12,7 @@ environment
 setup
 --------
 1. setting your datasource
+
 Default datasource jndiname is java:comp/DefaultDataSource (glassfish default. connect for derby)
 
 * src/main/resources/META-INF/persistence.xml
