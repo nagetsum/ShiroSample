@@ -61,10 +61,6 @@ public class UserAccountResource {
 
         userAccountRepository.create(newAccount);
         return Messages.thanksForSignUp(newAccount.getEmail());
-
-        // TODO : Post-Redirect-Back
-        // Jersey MVC does not have Flash Scope. diffircult show thanks for sign up message.
-//        return Response.seeOther(...);
     }
 
     @Path("sign_in")
