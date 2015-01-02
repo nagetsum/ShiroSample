@@ -27,6 +27,7 @@ import net.agetsuma.sample.shiro.entity.UserAccount;
 import net.agetsuma.sample.shiro.entity.UserAccountRepository;
 import net.agetsuma.sample.shiro.rest.message.Message;
 import net.agetsuma.sample.shiro.rest.message.Messages;
+import net.agetsuma.sample.shiro.security.BCryptPasswordService;
 import net.agetsuma.sample.shiro.service.auth.SigninService;
 import org.apache.shiro.authc.credential.DefaultPasswordService;
 import org.apache.shiro.authc.credential.PasswordService;
@@ -53,7 +54,13 @@ public class UserAccountResource {
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Message signUp(@Valid @BeanParam SignUpForm form) {
-        PasswordService ps = new DefaultPasswordService();
+//        PasswordService ps = new DefaultPasswordService();
+
+        PasswordService ps = new BCryptPasswordService();
+        // if you will more strongly, can set logRounds.
+        // default rounds is 10.
+//        PasswordService ps = new BCryptPasswordService(12);
+
         String encryptedPassword = ps.encryptPassword(form.getPassword());
 
         UserAccount newAccount = new UserAccount(form.getEmail(), encryptedPassword,
