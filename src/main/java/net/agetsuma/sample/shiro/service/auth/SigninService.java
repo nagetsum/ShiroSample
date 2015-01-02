@@ -36,6 +36,9 @@ public class SigninService {
             return true;
         } catch (AuthenticationException ae) {
             return false;
+        } finally {
+            // clean up password on java heap.
+            token.clear();
         }
     }
     
